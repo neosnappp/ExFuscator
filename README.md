@@ -27,3 +27,84 @@ since it's open-source, analyzing it and developing a deobfuscator will be easie
 ### Will you create a Discord server for ExFuscator?
 
 If ExFuscator gets enough attention and people actually start using it, I'll consider opening a Discord server
+
+
+İşte yeni guide — İngilizce, detaylı, 2 parça (her biri tek mesaja sığar). Aşağıyı kopyala:
+
+# ExFuscator — USAGE GUIDE
+-# v6.1 • github.com/neosnappp/ExFuscator
+
+-# ( this written by glm 5.3 )
+
+## What is ExFuscator?
+ExFuscator is a commercial-grade obfuscator for Lua/Luau, written in C++17. It turns your script into protected output that is extremely hard to read, analyze or modify — safe from script stealers, decompilers and static analysis. Every build is verified to behave identically to the original.
+
+## How It Protects Your Code
+
+**ExVM Virtualization — always active**
+Your script is compiled into custom encrypted bytecode running on an embedded register-based virtual machine. The output contains no readable Lua logic — no structure, no names, no constants. Every build shuffles its own opcode table, so each generated file is unique.
+
+**String Encryption**
+Every string literal is encrypted. Plaintext strings never appear in the output — they are decrypted only at runtime.
+
+**Number Encoding**
+Numeric constants are rewritten as arithmetic expressions, hiding offsets, keys and identifiers.
+
+**Identifier Renaming**
+All local names are replaced with meaningless generated identifiers that can never collide with your source.
+
+**Control Flow Flattening**
+Loops and branches are rebuilt into dispatcher-style flow, so the original logic tree becomes invisible. Intensity adapts automatically to file size.
+
+**Opaque Predicates**
+Fake conditions that always resolve one way but are practically impossible to evaluate statically — they poison static analysis.
+
+**Call Proxies**
+Function calls are routed through generated indirection layers, breaking call-graph analysis.
+
+**Dead Code Injection**
+Realistic fake code blocks are inserted around your real logic.
+
+**Data-Flow Masking**
+Intermediate values are transformed so the actual data flow cannot be traced.
+
+**Tamper Detection**
+The output verifies its own integrity: any edit or truncation stops the script safely with a typed error — no crash, no hint.
+
+## Build
+```bash 
+build.bat       # Windows (MSVC)
+```
+
+## Quick Start
+```bash
+./exfuscator script.lua                              # default (medium)
+./exfuscator script.lua -o protected.lua             # custom output path
+./exfuscator script.lua --preset maximum --seed 777  # strongest + reproducible
+```
+
+## Presets
+**`light`** — fastest runtime: identifier renaming, minification and full ExVM virtualization. Use when execution speed is critical.
+
+**`medium`** *(default)* — balanced protection: adds string encryption, number encoding, control-flow flattening, call proxies and opaque predicates.
+
+**`maximum`** — strongest protection: everything enabled, including global renaming and heavy dead code injection. Larger output, maximum resistance.
+
+ExVM virtualization is always active in every preset — your code never ships as readable Lua.
+
+## Options
+```
+-o, --output <file>   output path (default: out.lua)
+--preset <name>       light | medium | maximum
+--seed <n>            same seed = identical output (reproducible)
+--rename-globals      rename globals too (advanced)
+-q, --quiet           no console output
+-h, --help            help
+```
+
+## Tips
+- Always test the obfuscated output before distributing
+- The same --seed reproduces the exact same file
+- Output too large? Use --preset medium instead of maximum
+- Script runs slow? Use --preset light
+-# © kYro — ExFuscator
