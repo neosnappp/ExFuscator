@@ -1,3 +1,7 @@
+<img width="2172" height="724" alt="ExFuscator" src="https://github.com/user-attachments/assets/d571e0ab-da6a-4707-be25-fffe49d00a13" />
+
+
+
 # ExFuscator
 
 ### What is ExFuscator?
