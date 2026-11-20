@@ -33,8 +33,6 @@ since it's open-source, analyzing it and developing a deobfuscator will be easie
 If ExFuscator gets enough attention and people actually start using it, I'll consider opening a Discord server
 
 
-İşte yeni guide — İngilizce, detaylı, 2 parça (her biri tek mesaja sığar). Aşağıyı kopyala:
-
 # ExFuscator — USAGE GUIDE
 
 ( this written by glm 5.3 )
