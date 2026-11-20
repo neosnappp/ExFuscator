@@ -108,4 +108,5 @@ ExVM virtualization is always active in every preset — your code never ships a
 - The same --seed reproduces the exact same file
 - Output too large? Use --preset medium instead of maximum
 - Script runs slow? Use --preset light
--# © kYro — ExFuscator
+-# © kYro — ExFuscator ( glm 5.3 )
+
