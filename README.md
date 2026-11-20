@@ -36,9 +36,8 @@ If ExFuscator gets enough attention and people actually start using it, I'll con
 İşte yeni guide — İngilizce, detaylı, 2 parça (her biri tek mesaja sığar). Aşağıyı kopyala:
 
 # ExFuscator — USAGE GUIDE
--# v6.1 • github.com/neosnappp/ExFuscator
 
--# ( this written by glm 5.3 )
+( this written by glm 5.3 )
 
 ## What is ExFuscator?
 ExFuscator is a commercial-grade obfuscator for Lua/Luau, written in C++17. It turns your script into protected output that is extremely hard to read, analyze or modify — safe from script stealers, decompilers and static analysis. Every build is verified to behave identically to the original.
